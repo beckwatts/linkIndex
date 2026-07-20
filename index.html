@@ -1,26 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Links</title>
+
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      max-width: 600px;
-      margin: 4rem auto;
-      line-height: 1.8;
+    :root {
+      --background: #fafafa;
+      --card: #ffffff;
+      --text: #111111;
+      --secondary: #6e6e73;
+      --border: #e5e5e7;
+      --hover: #f2f2f4;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    h1 {
+      margin: 0 0 0.4rem;
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0 0 2rem;
+      color: var(--secondary);
+      font-size: 1.05rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
     a {
       display: block;
-      font-size: 1.2rem;
+      padding: 1rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+    }
+
+    a:hover {
+      background: var(--hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: var(--secondary);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #000;
+        --card: #161616;
+        --text: #f5f5f7;
+        --secondary: #98989d;
+        --border: #2c2c2e;
+        --hover: #202022;
+      }
     }
   </style>
 </head>
-<body>
-  <h1>My Links</h1>
 
-  <a href="https://github.com/yourname">GitHub</a>
-  <a href="https://linkedin.com/in/yourname">LinkedIn</a>
-  <a href="https://blog.example.com">Blog</a>
+<body>
+  <div class="container">
+    <h1>Your Name</h1>
+    <p>A few places to find me.</p>
+
+    <div class="links">
+      <a href="https://github.com/yourusername">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      <a href="https://yourblog.com">Blog</a>
+      <a href="mailto:you@example.com">Email</a>
+    </div>
+
+    <footer>
+      © 2026
+    </footer>
+  </div>
 </body>
 </html>
