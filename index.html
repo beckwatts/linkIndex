@@ -1,124 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Links</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --background: #fafafa;
-      --card: #ffffff;
-      --text: #111111;
-      --secondary: #6e6e73;
-      --border: #e5e5e7;
-      --hover: #f2f2f4;
-    }
+<title>Beck Watts</title>
 
-    * {
-      box-sizing: border-box;
-    }
+<style>
+:root{
+    --bg:#f5f5f2;
+    --text:#111;
+    --muted:#666;
+    --rule:#d5d5d5;
+    --accent:#e30613;
+}
 
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family:
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:16px;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:
         "Helvetica Neue",
         Helvetica,
         Arial,
         sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
+}
 
-    .container {
-      width: 100%;
-      max-width: 520px;
-    }
+main{
+    min-height:100vh;
 
-    h1 {
-      margin: 0 0 0.4rem;
-      font-size: 2.6rem;
-      font-weight: 600;
-      letter-spacing: -0.04em;
-    }
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:2rem;
 
-    p {
-      margin: 0 0 2rem;
-      color: var(--secondary);
-      font-size: 1.05rem;
-    }
+    padding:
+        clamp(2rem,5vw,5rem)
+        clamp(2rem,5vw,5rem);
+}
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
+.hero{
+    grid-column:1 / span 7;
 
-    a {
-      display: block;
-      padding: 1rem 1.25rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 1.05rem;
-      font-weight: 500;
-      transition:
-        background 0.2s ease,
-        transform 0.15s ease,
-        box-shadow 0.2s ease;
-    }
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
 
-    a:hover {
-      background: var(--hover);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(0,0,0,.06);
-    }
+aside{
+    grid-column:9 / span 4;
 
-    footer {
-      margin-top: 2rem;
-      color: var(--secondary);
-      font-size: 0.9rem;
-      text-align: center;
-    }
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #000;
-        --card: #161616;
-        --text: #f5f5f7;
-        --secondary: #98989d;
-        --border: #2c2c2e;
-        --hover: #202022;
-      }
-    }
-  </style>
+.label{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.75rem;
+    font-weight:600;
+}
+
+h1{
+    margin-top:6rem;
+
+    font-size:clamp(4rem,11vw,8rem);
+    line-height:.88;
+    font-weight:700;
+    letter-spacing:-.07em;
+}
+
+.bio{
+    max-width:32rem;
+
+    margin-top:3rem;
+
+    font-size:1.05rem;
+    line-height:1.7;
+    color:var(--muted);
+}
+
+.links{
+    width:100%;
+}
+
+.links a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:1.1rem 0;
+
+    border-top:1px solid var(--rule);
+
+    color:var(--text);
+    text-decoration:none;
+
+    font-size:1rem;
+
+    transition:
+        padding .18s ease,
+        color .18s ease;
+}
+
+.links a:last-child{
+    border-bottom:1px solid var(--rule);
+}
+
+.links span:last-child{
+    color:var(--muted);
+}
+
+.links a:hover{
+    color:var(--accent);
+    padding-left:.75rem;
+}
+
+footer{
+    margin-top:3rem;
+
+    font-size:.8rem;
+    color:var(--muted);
+
+    display:flex;
+    justify-content:space-between;
+}
+
+@media (max-width:900px){
+
+main{
+    grid-template-columns:1fr;
+    gap:4rem;
+}
+
+.hero,
+aside{
+    grid-column:auto;
+}
+
+h1{
+    margin-top:3rem;
+    font-size:4rem;
+}
+
+footer{
+    flex-direction:column;
+    gap:.5rem;
+}
+
+}
+
+@media (prefers-color-scheme:dark){
+
+:root{
+    --bg:#090909;
+    --text:#f5f5f5;
+    --muted:#9c9c9c;
+    --rule:#2d2d2d;
+}
+
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Beck Watts</h1>
-    <p>A few places to find me.</p>
 
-    <div class="links">
-      <a href="https://github.com/yourusername">GitHub</a>
-      <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-      <a href="https://yourblog.com">Blog</a>
-      <a href="contracting@beckwatts.com">Email</a>
-      <a href="Beck's Engineering Rabbitholes.pdf" target="_blank" rel="noopener">
-  Beck's Engineering Rabbitholes [Fall 2025]
+<main>
+
+<section class="hero">
+
+<div>
+
+<p class="label">
+Beck Watts
+</p>
+
+<h1>
+Software<br>
+Engineer
+</h1>
+
+<p class="bio">
+Building thoughtful software, exploring distributed systems,
+and documenting interesting engineering problems.
+</p>
+
+</div>
+
+<footer>
+<span>Seattle · USA</span>
+<span>2026</span>
+</footer>
+
+</section>
+
+<aside>
+
+<nav class="links">
+
+<a href="https://github.com/yourusername"
+target="_blank"
+rel="noopener">
+<span>GitHub</span>
+<span>01</span>
 </a>
-    </div>
 
-    <footer>
-  
-    </footer>
-  </div>
+<a href="https://linkedin.com/in/yourusername"
+target="_blank"
+rel="noopener">
+<span>LinkedIn</span>
+<span>02</span>
+</a>
+
+<a href="mailto:contracting@beckwatts.com">
+<span>Email</span>
+<span>03</span>
+</a>
+
+<a href="becks-engineering-rabbitholes-fall-2025.pdf"
+target="_blank"
+rel="noopener">
+<span>Engineering Rabbitholes</span>
+<span>PDF</span>
+</a>
+
+</nav>
+
+</aside>
+
+</main>
+
 </body>
 </html>
